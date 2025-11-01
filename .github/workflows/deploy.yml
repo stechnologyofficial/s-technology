@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npx vite build
+        run: pnpm run build:pages
         env:
           NODE_ENV: production
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
