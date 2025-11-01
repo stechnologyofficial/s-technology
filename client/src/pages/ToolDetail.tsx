@@ -99,6 +99,14 @@ export default function ToolDetail() {
                       {tool.downloadInfo.fileExtension && ` ${tool.downloadInfo.fileExtension}`}
                     </span>
                   </div>
+                  {tool.downloadUrl && (
+                    <a href={tool.downloadUrl} target="_blank" rel="noopener noreferrer" download>
+                      <Button size="sm">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </Button>
+                    </a>
+                  )}
                   {tool.githubUrl && (
                     <a href={tool.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" size="sm">

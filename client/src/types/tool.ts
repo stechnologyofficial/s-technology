@@ -15,6 +15,7 @@ export interface Tool {
     architecture?: string;
     fileExtension?: string;
   };
+  downloadUrl?: string;
   iconPath?: string;
   githubUrl?: string;
 }

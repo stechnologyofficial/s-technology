@@ -10,9 +10,9 @@ import { toast } from "sonner";
 import { publishedGames, prototypeGames, type Game } from "@/data/games";
 
 const statusConfig = {
-  live: { label: "Canlı", className: "bg-green-500/20 text-green-600 dark:text-green-400 border-green-500/30" },
-  prototype: { label: "Prototip", className: "bg-blue-500/20 text-blue-600 dark:text-blue-400 border-blue-500/30" },
-  deprecated: { label: "Kullanımdan Kaldırıldı", className: "bg-orange-500/20 text-orange-600 dark:text-orange-400 border-orange-500/30" },
+  live: { label: "Live", className: "bg-green-500/20 text-green-600 dark:text-green-400 border-green-500/30" },
+  prototype: { label: "Prototype", className: "bg-blue-500/20 text-blue-600 dark:text-blue-400 border-blue-500/30" },
+  deprecated: { label: "Deprecated", className: "bg-orange-500/20 text-orange-600 dark:text-orange-400 border-orange-500/30" },
 };
 
 export default function Games() {
@@ -58,8 +58,8 @@ export default function Games() {
       }
     }
     
-    // Son çare olarak placeholder göster
-    target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" dy="10.5" font-weight="bold" x="50%25" y="50%25" text-anchor="middle"%3EResim Yüklenemedi%3C/text%3E%3C/svg%3E';
+    // Fallback placeholder
+    target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" dy="10.5" font-weight="bold" x="50%25" y="50%25" text-anchor="middle"%3EImage failed to load%3C/text%3E%3C/svg%3E';
   };
 
   const openGameModal = (game: Game) => {
@@ -135,7 +135,7 @@ export default function Games() {
           onClick={() => openGameModal(game)}
         >
           <Play className="w-4 h-4 mr-2" />
-          Detaylar
+          Details
         </Button>
         {game.youtubeUrl && (
           <Button
@@ -166,16 +166,15 @@ export default function Games() {
         <div className="text-center mb-12 space-y-4 animate-slide-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-secondary/20 mb-4">
             <Gamepad2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium">Eğlenceli Oyunlar</span>
+            <span className="text-sm font-medium">Fun Games</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">Oyunlar</span>
+            <span className="gradient-text">Games</span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Unity ile geliştirilmiş mobil ve web oyunları. 
-            Yayınlanmış oyunlar ve prototipler.
+            Mobile and web games built with Unity. Published titles and prototypes.
           </p>
         </div>
 
@@ -185,11 +184,11 @@ export default function Games() {
             <TabsList>
               <TabsTrigger value="published" className="gap-2">
                 <Gamepad2 className="w-4 h-4" />
-                Yayınlanmış Oyunlar
+                Published Games
               </TabsTrigger>
               <TabsTrigger value="prototype" className="gap-2">
                 <FlaskConical className="w-4 h-4" />
-                Prototip Oyunlar
+                Prototype Games
               </TabsTrigger>
             </TabsList>
           </div>
@@ -202,10 +201,8 @@ export default function Games() {
             {publishedGames.length === 0 && (
               <div className="text-center py-20">
                 <Gamepad2 className="w-16 h-16 text-muted-foreground mx-auto mb-4 opacity-50" />
-                <h3 className="text-xl font-semibold mb-2">Henüz Oyun Eklenmedi</h3>
-                <p className="text-muted-foreground">
-                  Yakında burada harika oyunlar göreceksiniz!
-                </p>
+                <h3 className="text-xl font-semibold mb-2">No Games Added Yet</h3>
+                <p className="text-muted-foreground">You'll see great games here soon!</p>
               </div>
             )}
           </TabsContent>
@@ -218,10 +215,8 @@ export default function Games() {
             {prototypeGames.length === 0 && (
               <div className="text-center py-20">
                 <FlaskConical className="w-16 h-16 text-muted-foreground mx-auto mb-4 opacity-50" />
-                <h3 className="text-xl font-semibold mb-2">Henüz Prototip Eklenmedi</h3>
-                <p className="text-muted-foreground">
-                  Yakında burada prototip oyunlar göreceksiniz!
-                </p>
+                <h3 className="text-xl font-semibold mb-2">No Prototypes Yet</h3>
+                <p className="text-muted-foreground">Prototype games will appear here soon!</p>
               </div>
             )}
           </TabsContent>
@@ -265,7 +260,7 @@ export default function Games() {
 
                 {/* Description */}
                 <div className="mt-6">
-                  <h3 className="text-lg font-semibold mb-3">Oyun Hakkında</h3>
+                  <h3 className="text-lg font-semibold mb-3">About the Game</h3>
                   <div className="text-muted-foreground whitespace-pre-line leading-relaxed">
                     {selectedGame.description}
                   </div>
@@ -274,7 +269,7 @@ export default function Games() {
                 {/* Technologies */}
                 {selectedGame.technologies && selectedGame.technologies.length > 0 && (
                   <div className="mt-6">
-                    <h3 className="text-lg font-semibold mb-3">🔧 Kullanılan Teknolojiler</h3>
+                    <h3 className="text-lg font-semibold mb-3">🔧 Technologies Used</h3>
                     <div className="space-y-3">
                       {selectedGame.technologies.map((tech, index) => (
                         <div key={index} className="flex items-start gap-4 p-4 bg-muted rounded-lg">
@@ -305,7 +300,7 @@ export default function Games() {
                       onClick={() => window.open(selectedGame.youtubeUrl, '_blank')}
                     >
                       <Youtube className="w-4 h-4 mr-2" />
-                      YouTube'da İzle
+                      Watch on YouTube
                     </Button>
                   )}
                   {selectedGame.playStoreUrl && selectedGame.status !== 'deprecated' && (
@@ -315,7 +310,7 @@ export default function Games() {
                       onClick={() => window.open(selectedGame.playStoreUrl, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Play Store'da Aç
+                      Open on Play Store
                     </Button>
                   )}
                   {selectedGame.githubUrl && (
@@ -325,7 +320,7 @@ export default function Games() {
                       onClick={() => window.open(selectedGame.githubUrl, '_blank')}
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      GitHub'da Görüntüle
+                      View on GitHub
                     </Button>
                   )}
                 </div>
