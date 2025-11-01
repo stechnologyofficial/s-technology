@@ -36,33 +36,17 @@ pnpm preview
 
 ## 🌐 GitHub Pages Deployment
 
-### 1. Vite Config Güncelleme
+Proje GitHub Pages için otomatik olarak yapılandırılmıştır. Base path otomatik olarak repository adınıza göre ayarlanır.
 
-`vite.config.ts` dosyasında `base` parametresini repository adınızla güncelleyin:
-
-```typescript
-export default defineConfig({
-  base: '/repository-adi/', // GitHub repo adınız
-  // ... diğer ayarlar
-});
-```
-
-### 2. GitHub Actions ile Otomatik Deploy
+### Otomatik Deploy
 
 `.github/workflows/deploy.yml` dosyası otomatik deployment için hazır. Sadece GitHub repository ayarlarından:
 
 1. **Settings** → **Pages** → **Source** → **GitHub Actions** seçin
 2. Her `main` branch'e push'ta otomatik deploy olacak
+3. Site yayınlandıktan sonra URL: `https://[username].github.io/[repository-name]/`
 
-### 3. Manuel Deploy
-
-```bash
-# Build oluştur
-pnpm build
-
-# dist/public klasörünü gh-pages branch'ine push et
-pnpm deploy
-```
+**Not:** Eğer repository adınız `username.github.io` formatındaysa (kullanıcı/organizasyon sayfası), `vite.config.ts` dosyasındaki `base` parametresini `"/"` olarak güncelleyin veya GitHub Actions workflow'unda `GITHUB_PAGES_BASE` environment variable'ını `"/"` olarak ayarlayın.
 
 ## 📁 Proje Yapısı
 
