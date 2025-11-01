@@ -7,7 +7,9 @@ export default function NotFound() {
   const [, setLocation] = useLocation();
 
   const handleGoHome = () => {
-    setLocation("/");
+    // Base path ile ana sayfaya git
+    const basePath = import.meta.env.BASE_URL?.replace(/\/$/, '') || '';
+    setLocation(basePath + "/");
   };
 
   return (
