@@ -40,7 +40,7 @@ Proje GitHub Pages için otomatik olarak yapılandırılmıştır. Base path oto
 
 ### Otomatik Deploy
 
-`.github/workflows/deploy.yml` dosyası otomatik deployment için hazır. Sadece GitHub repository ayarlarından:
+`.github/workflows/deploy.yml` dosyası otomatik deployment için hazır. Repository public yapıldıktan sonra:
 
 1. **Settings** → **Pages** → **Source** → **GitHub Actions** seçin
 2. Her `main` branch'e push'ta otomatik deploy olacak
