@@ -1,0 +1,117 @@
+{
+  "installation": {
+    "_title": "Installation and First Launch",
+    "description": "Download, install, and configure YouTube Live Tracker for the first time.",
+    "step1": {
+      "title": "Download",
+      "description": "Download the Windows x64 version. After the download is complete, run the .exe file."
+    },
+    "step2": {
+      "title": "First Launch",
+      "description": "When you first open the application, you can select a language. 12 different languages are supported."
+    },
+    "step3": {
+      "title": "Interface Overview",
+      "description": "The main window has 6 tabs: Stream Settings, Display Settings, Preferences, Overlay Editor, Project, and Live Preview."
+    }
+  },
+  "youtube-connection": {
+    "_title": "Setting Up YouTube Connection",
+    "description": "Learn how to connect to a YouTube live stream. Connect using Video ID or URL.",
+    "step1": {
+      "title": "Stream Settings Tab",
+      "description": "Go to the 'Stream Settings' tab. Enter the YouTube live stream URL or Video ID. The application automatically extracts the Video ID from the URL.",
+      "codeExample": "Example URL: https://www.youtube.com/watch?v=VIDEO_ID\nor just: VIDEO_ID"
+    },
+    "step2": {
+      "title": "API Key (Optional)",
+      "description": "You can add a YouTube Data API v3 key for advanced features. Basic features work without an API key."
+    },
+    "step3": {
+      "title": "Start Stream",
+      "description": "Click the 'Start Stream' button. When connected, chat messages will start appearing in the 'Live Preview' tab."
+    }
+  },
+  "overlay-creation": {
+    "_title": "Creating Overlays",
+    "description": "Create transparent overlay windows for streaming software.",
+    "step1": {
+      "title": "Overlay Editor Tab",
+      "description": "Go to the 'Overlay Editor' tab. If you have multiple monitors, you can select a screen."
+    },
+    "step2": {
+      "title": "Enable Overlay",
+      "description": "Turn on the 'Overlay Active' toggle. This will create the overlay windows."
+    },
+    "step3": {
+      "title": "Adding Layers",
+      "description": "Click the 'Add Layer' button and select the layer type: ChatBox, Subscriber, Rich Text, Camera, or Media."
+    },
+    "step4": {
+      "title": "Positioning Layers",
+      "description": "Position the layer on the canvas by dragging and dropping. Edit position, size, and style properties from the Inspector panel."
+    }
+  },
+  "layer-management": {
+    "_title": "Layer Management and Customization",
+    "description": "Manage, customize, and order layers with z-index.",
+    "step1": {
+      "title": "Layer Properties",
+      "description": "In the Inspector panel, you can set X, Y coordinates, width/height, opacity (0-100%), z-index, and visibility settings."
+    },
+    "step2": {
+      "title": "Alignment Tool",
+      "description": "You can easily align layers using the 9-point alignment grid (Unity style)."
+    },
+    "step3": {
+      "title": "Visibility and Lock",
+      "description": "Use the visibility and lock buttons to hide or lock layers. Locked layers cannot be dragged."
+    },
+    "step4": {
+      "title": "Real-time Preview",
+      "description": "The overlay window is automatically created and your changes are displayed instantly."
+    }
+  },
+  "statistics-display": {
+    "_title": "Displaying Statistics",
+    "description": "Display YouTube statistics (likes, viewers, subscriber count) on the overlay using Rich Text layers.",
+    "step1": {
+      "title": "Add Rich Text Layer",
+      "description": "Select and add the 'Rich Text' layer type in the Overlay Editor."
+    },
+    "step2": {
+      "title": "WebAPI Tags",
+      "description": "Add WebAPI tags to the Rich Text content. Example: Likes: <webapi link=\"youtube:likes\" t=30>",
+      "codeExample": "Likes: <webapi link=\"youtube:likes\" t=30>\nViewers: <webapi link=\"youtube:viewers\" t=10>\nViews: <webapi link=\"youtube:views\" t=60>"
+    },
+    "step3": {
+      "title": "Update Interval",
+      "description": "Set the update interval for statistics using the 't' parameter (in seconds)."
+    },
+    "step4": {
+      "title": "Style Customization",
+      "description": "Set font, color, outline, shadow, and other text properties from the Inspector panel."
+    }
+  },
+  "media-management": {
+    "_title": "Media File Management",
+    "description": "Upload and manage image, video, and audio files from the Project panel.",
+    "step1": {
+      "title": "Project Tab",
+      "description": "Go to the 'Project' tab. The file browser will be displayed."
+    },
+    "step2": {
+      "title": "File Upload",
+      "description": "Upload files by dragging and dropping, or organize them by creating folders."
+    },
+    "step3": {
+      "title": "File Operations",
+      "description": "Right-click on files to delete, rename, move, and download."
+    },
+    "step4": {
+      "title": "Using Media Layer",
+      "description": "Use uploaded files in Media layers. You can set video loop, poster image, and object-fit options."
+    }
+  }
+}
+

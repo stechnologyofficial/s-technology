@@ -1,0 +1,57 @@
+==============================================
+YOUTUBE WEBAPI ETİKETLERİ
+==============================================
+
+1. BEĞENİ SAYISI
+<webapi link="youtube:likes" t=30>
+<webapi link="youtube:like" t=30>
+
+2. CANLI İZLEYİCİ SAYISI
+<webapi link="youtube:viewers" t=10>
+<webapi link="youtube:viewer" t=10>
+<webapi link="youtube:concurrent" t=10>
+
+3. TOPLAM GÖRÜNTÜLENME
+<webapi link="youtube:views" t=60>
+<webapi link="youtube:view" t=60>
+
+4. KANAL ABONE SAYISI
+<webapi link="youtube:subscribers" t=120>
+<webapi link="youtube:subscriber" t=120>
+
+NOT: Abone sayısı için YouTube Data API v3 key gereklidir.
+API key olmadan scraping ile abone sayısı alınamaz.
+API key almak için: https://console.cloud.google.com/apis/credentials
+
+5. YAYIN BAŞLIĞI
+<webapi link="youtube:title" t=120>
+
+6. KANAL İSMİ
+<webapi link="youtube:channel" t=60>
+<webapi link="youtube:channelName" t=60>
+
+7. KANAL ID
+<webapi link="youtube:channelId" t=300>
+
+8. VİDEO ID
+<webapi link="youtube:videoId" t=300>
+
+==============================================
+PARAMETRELER
+==============================================
+link="youtube:KEY"  - Kısayol (zorunlu)
+t=NUMBER            - Güncelleme süresi (saniye)
+tp=true/false       - Text properties (varsayılan: true)
+
+==============================================
+ÖRNEK KULLANIM
+==============================================
+Beğeni: <webapi link="youtube:likes" t=30>
+İzleyici: <webapi link="youtube:viewers" t=10>
+Görüntülenme: <webapi link="youtube:views" t=60>
+Kanal: <webapi link="youtube:channel" t=60>
+Abone: <webapi link="youtube:subscribers" t=120>
+Yayın: <webapi link="youtube:title" t=120>
+
+==============================================
+
