@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -12,12 +12,13 @@ import Tutorial from "./pages/Tutorial";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-function Router() {
+function AppRouter() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 pt-16">
-        <Switch>
+        <WouterRouter base={import.meta.env.BASE_URL}>
+          <Switch>
           <Route path={"/"} component={Home} />
           <Route path={"/tools"} component={Tools} />
           <Route path={"/games"} component={Games} />
@@ -25,7 +26,8 @@ function Router() {
           <Route path={"/tool/:id"} component={ToolDetail} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
-        </Switch>
+          </Switch>
+        </WouterRouter>
       </main>
       <Footer />
     </div>
@@ -38,7 +40,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <AppRouter />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

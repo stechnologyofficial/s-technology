@@ -38,6 +38,9 @@ jobs:
           NODE_ENV: production
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
 
+      - name: Create SPA 404 fallback
+        run: cp ./dist/public/index.html ./dist/public/404.html
+
       - name: Verify build output
         run: |
           ls -la dist/public || echo "dist/public not found"
