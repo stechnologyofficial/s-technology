@@ -78,7 +78,7 @@ export default function Tools() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => window.open(tool.githubUrl || "https://github.com/stechnologyofficial", "_blank")}
+                  onClick={() => window.open(tool.githubUrl || "https://github.com/salihbaglan", "_blank")}
                 >
                   <Github className="w-4 h-4" />
                 </Button>
