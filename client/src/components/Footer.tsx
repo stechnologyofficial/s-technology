@@ -1,4 +1,5 @@
 import { Github, Mail, Code2, Facebook, Youtube } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,19 +26,19 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground">Quick Links</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="/" className="hover:text-primary transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/tools" className="hover:text-primary transition-colors">
+                <Link href="/tools" className="hover:text-primary transition-colors">
                   Tools
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/games" className="hover:text-primary transition-colors">
+                <Link href="/games" className="hover:text-primary transition-colors">
                   Games
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

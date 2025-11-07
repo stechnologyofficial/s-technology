@@ -17,23 +17,23 @@ function AppRouter() {
   const basePath = import.meta.env.BASE_URL?.replace(/\/$/, '') || '';
   
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-1 pt-16">
-        <WouterRouter base={basePath}>
+    <WouterRouter base={basePath}>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 pt-16">
           <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/tools" component={Tools} />
-          <Route path="/games" component={Games} />
-          <Route path="/tool/:id/tutorial/:tutorialId" component={Tutorial} />
-          <Route path="/tool/:id" component={ToolDetail} />
-          <Route path="/404" component={NotFound} />
-          <Route component={NotFound} />
+            <Route path="/" component={Home} />
+            <Route path="/tools" component={Tools} />
+            <Route path="/games" component={Games} />
+            <Route path="/tool/:id/tutorial/:tutorialId" component={Tutorial} />
+            <Route path="/tool/:id" component={ToolDetail} />
+            <Route path="/404" component={NotFound} />
+            <Route component={NotFound} />
           </Switch>
-        </WouterRouter>
-      </main>
-      <Footer />
-    </div>
+        </main>
+        <Footer />
+      </div>
+    </WouterRouter>
   );
 }
 
