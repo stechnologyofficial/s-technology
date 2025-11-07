@@ -15,6 +15,8 @@ export interface Tool {
     architecture?: string;
     fileExtension?: string;
   };
+  // Optional multiple download links (e.g., Portable, Setup)
+  downloads?: { label: string; url: string }[];
   downloadUrl?: string;
   iconPath?: string;
   githubUrl?: string;

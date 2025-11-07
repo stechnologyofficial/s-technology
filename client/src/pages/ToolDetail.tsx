@@ -99,13 +99,24 @@ export default function ToolDetail() {
                       {tool.downloadInfo.fileExtension && ` ${tool.downloadInfo.fileExtension}`}
                     </span>
                   </div>
-                  {tool.downloadUrl && (
-                    <a href={tool.downloadUrl} target="_blank" rel="noopener noreferrer" download>
-                      <Button size="sm">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download
-                      </Button>
-                    </a>
+                  {Array.isArray(tool.downloads) && tool.downloads.length > 0 ? (
+                    tool.downloads.map((d) => (
+                      <a key={d.label} href={d.url} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm">
+                          <Download className="w-4 h-4 mr-2" />
+                          {d.label}
+                        </Button>
+                      </a>
+                    ))
+                  ) : (
+                    tool.downloadUrl && (
+                      <a href={tool.downloadUrl} target="_blank" rel="noopener noreferrer" download>
+                        <Button size="sm">
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
+                        </Button>
+                      </a>
+                    )
                   )}
                   {tool.githubUrl && (
                     <a href={tool.githubUrl} target="_blank" rel="noopener noreferrer">
